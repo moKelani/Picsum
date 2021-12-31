@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "launch-screen-logo.pdf",
       "idiom" : "universal"
     }
   ],

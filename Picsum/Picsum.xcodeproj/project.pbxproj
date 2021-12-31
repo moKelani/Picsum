@@ -16,6 +16,16 @@
 		46D240D2277DF1B200EDDE1A /* PicsumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D240D1277DF1B200EDDE1A /* PicsumTests.swift */; };
 		46D240DC277DF1B200EDDE1A /* PicsumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D240DB277DF1B200EDDE1A /* PicsumUITests.swift */; };
 		46D240DE277DF1B200EDDE1A /* PicsumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D240DD277DF1B200EDDE1A /* PicsumUITestsLaunchTests.swift */; };
+		46F2508F277EDF0D0099CDB6 /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2508E277EDF0D0099CDB6 /* UIView+Loading.swift */; };
+		46F25091277EDFF90099CDB6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F25090277EDFF90099CDB6 /* Reachability.swift */; };
+		46F25093277EE08D0099CDB6 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F25092277EE08D0099CDB6 /* NotificationName.swift */; };
+		46F25095277EE1170099CDB6 /* EmptyPlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F25094277EE1170099CDB6 /* EmptyPlaceHolderView.swift */; };
+		46F25097277EE1400099CDB6 /* UICollectionView+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F25096277EE1400099CDB6 /* UICollectionView+EmptyState.swift */; };
+		46F25099277EE1600099CDB6 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F25098277EE1600099CDB6 /* UIImageView+DownloadImage.swift */; };
+		46F2509F277FA3080099CDB6 /* BasePresenterIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2509E277FA3080099CDB6 /* BasePresenterIO.swift */; };
+		46F250A1277FA3560099CDB6 /* PicsumError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F250A0277FA3560099CDB6 /* PicsumError.swift */; };
+		46F250A3277FB8040099CDB6 /* UIViewController+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F250A2277FB8040099CDB6 /* UIViewController+Toast.swift */; };
+		46F250A5277FBCDD0099CDB6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F250A4277FBCDD0099CDB6 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		46D240D7277DF1B200EDDE1A /* PicsumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicsumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D240DB277DF1B200EDDE1A /* PicsumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumUITests.swift; sourceTree = "<group>"; };
 		46D240DD277DF1B200EDDE1A /* PicsumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		46F2508E277EDF0D0099CDB6 /* UIView+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
+		46F25090277EDFF90099CDB6 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		46F25092277EE08D0099CDB6 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		46F25094277EE1170099CDB6 /* EmptyPlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceHolderView.swift; sourceTree = "<group>"; };
+		46F25096277EE1400099CDB6 /* UICollectionView+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+EmptyState.swift"; sourceTree = "<group>"; };
+		46F25098277EE1600099CDB6 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
+		46F2509E277FA3080099CDB6 /* BasePresenterIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenterIO.swift; sourceTree = "<group>"; };
+		46F250A0277FA3560099CDB6 /* PicsumError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumError.swift; sourceTree = "<group>"; };
+		46F250A2277FB8040099CDB6 /* UIViewController+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Toast.swift"; sourceTree = "<group>"; };
+		46F250A4277FBCDD0099CDB6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +119,17 @@
 		46D240B9277DF1B000EDDE1A /* Picsum */ = {
 			isa = PBXGroup;
 			children = (
-				46D240BA277DF1B000EDDE1A /* AppDelegate.swift */,
-				46D240BC277DF1B000EDDE1A /* SceneDelegate.swift */,
+				46F25089277EDAA40099CDB6 /* App */,
+				46F2509B277F9FCD0099CDB6 /* Constants */,
+				46F2509C277F9FE10099CDB6 /* Components */,
+				46F2508A277EDBA50099CDB6 /* Extension */,
+				46F2509D277FA0000099CDB6 /* Resources */,
+				46F2508B277EDBB10099CDB6 /* Models */,
+				46F2509A277F97720099CDB6 /* Protocol */,
+				46F2508D277EDBD40099CDB6 /* DataAccessLayer */,
+				46F2508C277EDBBD0099CDB6 /* Scene */,
 				46D240BE277DF1B000EDDE1A /* ViewController.swift */,
 				46D240C0277DF1B000EDDE1A /* Main.storyboard */,
-				46D240C3277DF1B200EDDE1A /* Assets.xcassets */,
 				46D240C5277DF1B200EDDE1A /* LaunchScreen.storyboard */,
 				46D240C8277DF1B200EDDE1A /* Info.plist */,
 			);
@@ -125,6 +151,82 @@
 				46D240DD277DF1B200EDDE1A /* PicsumUITestsLaunchTests.swift */,
 			);
 			path = PicsumUITests;
+			sourceTree = "<group>";
+		};
+		46F25089277EDAA40099CDB6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				46D240BA277DF1B000EDDE1A /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		46F2508A277EDBA50099CDB6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				46F2508E277EDF0D0099CDB6 /* UIView+Loading.swift */,
+				46F25090277EDFF90099CDB6 /* Reachability.swift */,
+				46F25092277EE08D0099CDB6 /* NotificationName.swift */,
+				46F25094277EE1170099CDB6 /* EmptyPlaceHolderView.swift */,
+				46F25096277EE1400099CDB6 /* UICollectionView+EmptyState.swift */,
+				46F25098277EE1600099CDB6 /* UIImageView+DownloadImage.swift */,
+				46F250A2277FB8040099CDB6 /* UIViewController+Toast.swift */,
+				46F250A4277FBCDD0099CDB6 /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		46F2508B277EDBB10099CDB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		46F2508C277EDBBD0099CDB6 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				46D240BC277DF1B000EDDE1A /* SceneDelegate.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		46F2508D277EDBD40099CDB6 /* DataAccessLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataAccessLayer;
+			sourceTree = "<group>";
+		};
+		46F2509A277F97720099CDB6 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				46F2509E277FA3080099CDB6 /* BasePresenterIO.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		46F2509B277F9FCD0099CDB6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				46F250A0277FA3560099CDB6 /* PicsumError.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		46F2509C277F9FE10099CDB6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		46F2509D277FA0000099CDB6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46D240C3277DF1B200EDDE1A /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +361,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				46D240BF277DF1B000EDDE1A /* ViewController.swift in Sources */,
+				46F250A1277FA3560099CDB6 /* PicsumError.swift in Sources */,
+				46F2509F277FA3080099CDB6 /* BasePresenterIO.swift in Sources */,
+				46F25095277EE1170099CDB6 /* EmptyPlaceHolderView.swift in Sources */,
+				46F25093277EE08D0099CDB6 /* NotificationName.swift in Sources */,
+				46F2508F277EDF0D0099CDB6 /* UIView+Loading.swift in Sources */,
+				46F25097277EE1400099CDB6 /* UICollectionView+EmptyState.swift in Sources */,
+				46F25099277EE1600099CDB6 /* UIImageView+DownloadImage.swift in Sources */,
 				46D240BB277DF1B000EDDE1A /* AppDelegate.swift in Sources */,
+				46F250A5277FBCDD0099CDB6 /* UIColor.swift in Sources */,
+				46F25091277EDFF90099CDB6 /* Reachability.swift in Sources */,
+				46F250A3277FB8040099CDB6 /* UIViewController+Toast.swift in Sources */,
 				46D240BD277DF1B000EDDE1A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
