@@ -8,6 +8,6 @@
 import Foundation
 
 protocol PhotosRepository {
-    func photos(with limit: Int, page: Int, completion: @escaping (Result< PicsumPhoto, PicsumError>) -> Void)
+    func photos(with limit: Int, page: Int, completion: @escaping (Result<[PicsumPhoto], PicsumError>) -> Void)
 }
 

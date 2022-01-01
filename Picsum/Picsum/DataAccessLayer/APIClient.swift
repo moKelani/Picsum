@@ -7,24 +7,20 @@
 
 import Foundation
 
-// MARK: - DataTask
-protocol URLSessionDataTaskProtocol {
-    func resume()
-}
+import Foundation
 
-extension URLSessionDataTask: URLSessionDataTaskProtocol {}
-
-// MARK: - URLSession
 protocol URLSessionProtocol {
-    @discardableResult func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol
+    func loadData(with url: URL, completionHandler: @escaping (Data?, Error?) -> Void)
 }
 
 extension URLSession: URLSessionProtocol {
-    @discardableResult func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
-        return (dataTask(with: url, completionHandler: completionHandler) as URLSessionDataTask) as URLSessionDataTaskProtocol
+    func loadData(with url: URL, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let task = dataTask(with: url) { (data, _, error) in
+            completionHandler(data, error)
+        }
+        task.resume()
     }
 }
-
 class APIClient {
     private var session: URLSessionProtocol
     
@@ -33,20 +29,20 @@ class APIClient {
     }
     
     func loadData<T: Decodable>(from url: URL, completion: @escaping (Result<T, PicsumError>) -> Void) {
-        session.dataTask(with: url) { data, _, _ in
+        session.loadData(with: url) { data, _ in
             do {
                 guard let data = data else {
                     completion(.failure(.noResults))
                     return
                 }
-                
+
                 let decoder = JSONDecoder()
                 let result = try decoder.decode(T.self, from: data)
                 completion(.success(result))
-                
+
             } catch let error {
                 completion(.failure(.runtimeError(error.localizedDescription)))
-                
+
             }
         }
     }

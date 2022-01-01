@@ -37,3 +37,20 @@ struct PicsumPhoto : Codable {
 
 }
 
+import Foundation
+
+struct PicsumPhotoList : Codable {
+    let photos : [PicsumPhoto]?
+
+    enum CodingKeys: String, CodingKey {
+
+        case photos = "photos"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        photos = try values.decodeIfPresent([PicsumPhoto].self, forKey: .photos)
+    }
+
+}
+
