@@ -26,6 +26,11 @@
 		46F250A1277FA3560099CDB6 /* PicsumError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F250A0277FA3560099CDB6 /* PicsumError.swift */; };
 		46F250A3277FB8040099CDB6 /* UIViewController+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F250A2277FB8040099CDB6 /* UIViewController+Toast.swift */; };
 		46F250A5277FBCDD0099CDB6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F250A4277FBCDD0099CDB6 /* UIColor.swift */; };
+		46F250A7277FC2E00099CDB6 /* APILinksFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F250A6277FC2E00099CDB6 /* APILinksFactory.swift */; };
+		46F250A9277FC4270099CDB6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F250A8277FC4270099CDB6 /* APIClient.swift */; };
+		46F250AC277FC4DA0099CDB6 /* PhotosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F250AB277FC4DA0099CDB6 /* PhotosRepository.swift */; };
+		46F250AE277FC5370099CDB6 /* PicsumPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F250AD277FC5370099CDB6 /* PicsumPhoto.swift */; };
+		46F250B0277FE6CE0099CDB6 /* WebPhotosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F250AF277FE6CE0099CDB6 /* WebPhotosRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,11 @@
 		46F250A0277FA3560099CDB6 /* PicsumError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumError.swift; sourceTree = "<group>"; };
 		46F250A2277FB8040099CDB6 /* UIViewController+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Toast.swift"; sourceTree = "<group>"; };
 		46F250A4277FBCDD0099CDB6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		46F250A6277FC2E00099CDB6 /* APILinksFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILinksFactory.swift; sourceTree = "<group>"; };
+		46F250A8277FC4270099CDB6 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		46F250AB277FC4DA0099CDB6 /* PhotosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepository.swift; sourceTree = "<group>"; };
+		46F250AD277FC5370099CDB6 /* PicsumPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumPhoto.swift; sourceTree = "<group>"; };
+		46F250AF277FE6CE0099CDB6 /* WebPhotosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPhotosRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +189,7 @@
 		46F2508B277EDBB10099CDB6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				46F250AD277FC5370099CDB6 /* PicsumPhoto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,6 +205,9 @@
 		46F2508D277EDBD40099CDB6 /* DataAccessLayer */ = {
 			isa = PBXGroup;
 			children = (
+				46F250AA277FC4BA0099CDB6 /* PhotosRepository */,
+				46F250A6277FC2E00099CDB6 /* APILinksFactory.swift */,
+				46F250A8277FC4270099CDB6 /* APIClient.swift */,
 			);
 			path = DataAccessLayer;
 			sourceTree = "<group>";
@@ -227,6 +241,15 @@
 				46D240C3277DF1B200EDDE1A /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		46F250AA277FC4BA0099CDB6 /* PhotosRepository */ = {
+			isa = PBXGroup;
+			children = (
+				46F250AB277FC4DA0099CDB6 /* PhotosRepository.swift */,
+				46F250AF277FE6CE0099CDB6 /* WebPhotosRepository.swift */,
+			);
+			path = PhotosRepository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,14 +388,19 @@
 				46F2509F277FA3080099CDB6 /* BasePresenterIO.swift in Sources */,
 				46F25095277EE1170099CDB6 /* EmptyPlaceHolderView.swift in Sources */,
 				46F25093277EE08D0099CDB6 /* NotificationName.swift in Sources */,
+				46F250AE277FC5370099CDB6 /* PicsumPhoto.swift in Sources */,
 				46F2508F277EDF0D0099CDB6 /* UIView+Loading.swift in Sources */,
 				46F25097277EE1400099CDB6 /* UICollectionView+EmptyState.swift in Sources */,
 				46F25099277EE1600099CDB6 /* UIImageView+DownloadImage.swift in Sources */,
+				46F250A9277FC4270099CDB6 /* APIClient.swift in Sources */,
 				46D240BB277DF1B000EDDE1A /* AppDelegate.swift in Sources */,
 				46F250A5277FBCDD0099CDB6 /* UIColor.swift in Sources */,
 				46F25091277EDFF90099CDB6 /* Reachability.swift in Sources */,
 				46F250A3277FB8040099CDB6 /* UIViewController+Toast.swift in Sources */,
 				46D240BD277DF1B000EDDE1A /* SceneDelegate.swift in Sources */,
+				46F250B0277FE6CE0099CDB6 /* WebPhotosRepository.swift in Sources */,
+				46F250AC277FC4DA0099CDB6 /* PhotosRepository.swift in Sources */,
+				46F250A7277FC2E00099CDB6 /* APILinksFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
