@@ -11,7 +11,9 @@ struct PhotosListBuilder {
     
     static func viewController() -> PhotosListViewController {
         let viewController: PhotosListViewController = PhotosListViewController()
-        let presenter = PhotosListPresenter(output: viewController)
+        let router = PhotosListRouter(viewController: viewController)
+        let presenter = PhotosListPresenter(output: viewController, router: router)
+        
         viewController.presenter = presenter
         return viewController
     }

@@ -11,6 +11,7 @@ protocol PhotosListPresenterInput: BasePresenterInput {
     func getPhotoList()
     func loadMoreData(_ page: Int)
     func getHistory()
+    func navigateToPhotoDetails(photo: PicsumPhoto)
     var state: State { get set }
 }
 
@@ -29,6 +30,8 @@ class PhotosListPresenter {
     // MARK: Injections
     private weak var output: PhotosListPresenterOutput?
     let photosRepository: WebPhotosRepository
+    var router: PhotosListRoutable
+    
     var state: State = .history
 
     fileprivate var page: Int = 1
@@ -37,9 +40,9 @@ class PhotosListPresenter {
     private var itemsForCollection: [ItemCollectionViewCellType] = [ItemCollectionViewCellType]()
     
     // MARK: LifeCycle
-    init(output: PhotosListPresenterOutput, photosRepository: WebPhotosRepository = WebPhotosRepository()) {
-        
+    init(output: PhotosListPresenterOutput, router: PhotosListRoutable,  photosRepository: WebPhotosRepository = WebPhotosRepository()) {
         self.output = output
+        self.router = router
         self.photosRepository = photosRepository
         [Notifications.Reachability.connected.name, Notifications.Reachability.notConnected.name].forEach { (notification) in
             NotificationCenter.default.addObserver(self, selector: #selector(changeInternetConnection), name: notification, object: nil)
@@ -50,6 +53,10 @@ class PhotosListPresenter {
 
 // MARK: - PhotosListPresenterInput
 extension PhotosListPresenter: PhotosListPresenterInput {
+    func navigateToPhotoDetails(photo: PicsumPhoto) {
+        router.gotoPhotoDetails(photo: photo)
+    }
+   
     func getPhotoList() {
         getData()
     }

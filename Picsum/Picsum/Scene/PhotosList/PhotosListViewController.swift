@@ -24,10 +24,8 @@ class PhotosListViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: PhotoCollectionCell.identifier)
         collectionView.register(AdPlaceHolderCollectionCell.self, forCellWithReuseIdentifier: AdPlaceHolderCollectionCell.identifier)
-       // collectionView.register(HistoryHeaderCollectionCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HistoryHeaderCollectionCell.identifier)
         collectionView.tag = 1
         collectionView.backgroundColor = .white
-        collectionView.keyboardDismissMode = .onDrag
         return collectionView
     }()
     
@@ -65,7 +63,7 @@ class PhotosListViewController: UIViewController {
         appearance.shadowColor = .clear
         appearance.shadowImage = UIImage()
 
-        navigationController?.navigationBar.tintColor = UIColor.systemBackground
+        navigationController?.navigationBar.tintColor = UIColor.basicYellow
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
@@ -96,11 +94,7 @@ extension PhotosListViewController {
 
     private func emptyState(emptyPlaceHolderType: EmptyPlaceHolderType) {
         clearCollection()
-//        photosCollectionView.setEmptyView(emptyPlaceHolderType: emptyPlaceHolderType, completionBlock: { [weak self] in
-//            if let text = self?.searchController.searchBar.text, !text.isEmpty, text.count >= 3 {
-//                self?.presenter?.search(for: text)
-//            }
-//        })
+        photosCollectionView.setEmptyView(emptyPlaceHolderType: emptyPlaceHolderType, completionBlock: nil)
     }
 }
 

@@ -63,9 +63,9 @@ class PhotosCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let item = itemsForCollection[indexPath.row] {
             switch item {
+            case .photo(photo: let photo):
+                presenterInput?.navigateToPhotoDetails(photo: photo)
             case .adPlaceHolder:
-                break
-            default:
                 break
             }
         }
@@ -77,6 +77,7 @@ class PhotosCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICo
             presenterInput?.loadMoreData(pageToGet)
         }
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let item = itemsForCollection[indexPath.row] {

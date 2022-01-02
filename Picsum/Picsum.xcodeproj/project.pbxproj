@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4657E3FF27818CDD001BC663 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657E3FE27818CDD001BC663 /* PhotoDetailsViewController.swift */; };
+		4657E40127818D0E001BC663 /* PhotoDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657E40027818D0E001BC663 /* PhotoDetailsBuilder.swift */; };
+		4657E40327818D26001BC663 /* PhotoDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657E40227818D26001BC663 /* PhotoDetailsPresenter.swift */; };
+		4657E4052781CB59001BC663 /* PhotosListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657E4042781CB59001BC663 /* PhotosListRouter.swift */; };
+		4657E4072781D50A001BC663 /* UIImage+dominantColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657E4062781D50A001BC663 /* UIImage+dominantColor.swift */; };
 		46D240BB277DF1B000EDDE1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D240BA277DF1B000EDDE1A /* AppDelegate.swift */; };
 		46D240BD277DF1B000EDDE1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D240BC277DF1B000EDDE1A /* SceneDelegate.swift */; };
 		46D240C4277DF1B200EDDE1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46D240C3277DF1B200EDDE1A /* Assets.xcassets */; };
@@ -68,6 +73,11 @@
 		21FCBD303AD740EBDFECB233 /* Pods-PicsumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicsumTests.debug.xcconfig"; path = "Target Support Files/Pods-PicsumTests/Pods-PicsumTests.debug.xcconfig"; sourceTree = "<group>"; };
 		24D3AB19E6F7A2B290337A39 /* Pods_Picsum_PicsumUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Picsum_PicsumUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		458B66937E6611AA9F1491C9 /* Pods_PicsumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicsumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4657E3FE27818CDD001BC663 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		4657E40027818D0E001BC663 /* PhotoDetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsBuilder.swift; sourceTree = "<group>"; };
+		4657E40227818D26001BC663 /* PhotoDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsPresenter.swift; sourceTree = "<group>"; };
+		4657E4042781CB59001BC663 /* PhotosListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListRouter.swift; sourceTree = "<group>"; };
+		4657E4062781D50A001BC663 /* UIImage+dominantColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+dominantColor.swift"; sourceTree = "<group>"; };
 		46D240B7277DF1B000EDDE1A /* Picsum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picsum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D240BA277DF1B000EDDE1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46D240BC277DF1B000EDDE1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +151,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4657E3FD27818C79001BC663 /* PhotoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4657E3FE27818CDD001BC663 /* PhotoDetailsViewController.swift */,
+				4657E40027818D0E001BC663 /* PhotoDetailsBuilder.swift */,
+				4657E40227818D26001BC663 /* PhotoDetailsPresenter.swift */,
+			);
+			path = PhotoDetails;
+			sourceTree = "<group>";
+		};
 		46D240AE277DF1B000EDDE1A = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +239,7 @@
 				46F250A2277FB8040099CDB6 /* UIViewController+Toast.swift */,
 				46F250A4277FBCDD0099CDB6 /* UIColor.swift */,
 				46F250C2277FEDA10099CDB6 /* UICollectionView+ReusableCell.swift */,
+				4657E4062781D50A001BC663 /* UIImage+dominantColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -236,6 +257,7 @@
 			children = (
 				46D240BC277DF1B000EDDE1A /* SceneDelegate.swift */,
 				46F250B1277FE7B50099CDB6 /* PhotosList */,
+				4657E3FD27818C79001BC663 /* PhotoDetails */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -301,6 +323,7 @@
 				46F250B2277FE7D00099CDB6 /* PhotosListBuilder.swift */,
 				46F250B4277FE7DF0099CDB6 /* PhotosListPresenter.swift */,
 				46F250B6277FE7EE0099CDB6 /* PhotosListViewController.swift */,
+				4657E4042781CB59001BC663 /* PhotosListRouter.swift */,
 			);
 			path = PhotosList;
 			sourceTree = "<group>";
@@ -333,7 +356,6 @@
 				21FCBD303AD740EBDFECB233 /* Pods-PicsumTests.debug.xcconfig */,
 				EA2326D71D4981163FAA0D93 /* Pods-PicsumTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -586,6 +608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46F250CB277FF4540099CDB6 /* EntryPoint.swift in Sources */,
+				4657E4052781CB59001BC663 /* PhotosListRouter.swift in Sources */,
 				46F250A1277FA3560099CDB6 /* PicsumError.swift in Sources */,
 				46F2509F277FA3080099CDB6 /* BasePresenterIO.swift in Sources */,
 				46F25095277EE1170099CDB6 /* EmptyPlaceHolderView.swift in Sources */,
@@ -593,6 +616,7 @@
 				46F250C5277FF0A00099CDB6 /* AdPlaceHolderCollectionCell.swift in Sources */,
 				46F250B5277FE7DF0099CDB6 /* PhotosListPresenter.swift in Sources */,
 				46F250AE277FC5370099CDB6 /* PicsumPhoto.swift in Sources */,
+				4657E4072781D50A001BC663 /* UIImage+dominantColor.swift in Sources */,
 				46F250C9277FF3EB0099CDB6 /* Constant.swift in Sources */,
 				46F2508F277EDF0D0099CDB6 /* UIView+Loading.swift in Sources */,
 				46F250BB277FED1C0099CDB6 /* ItemCollectionViewCellType.swift in Sources */,
@@ -610,9 +634,12 @@
 				46F250C3277FEDA10099CDB6 /* UICollectionView+ReusableCell.swift in Sources */,
 				46F250B7277FE7EE0099CDB6 /* PhotosListViewController.swift in Sources */,
 				46D240BD277DF1B000EDDE1A /* SceneDelegate.swift in Sources */,
+				4657E40127818D0E001BC663 /* PhotoDetailsBuilder.swift in Sources */,
 				46F250B0277FE6CE0099CDB6 /* WebPhotosRepository.swift in Sources */,
+				4657E3FF27818CDD001BC663 /* PhotoDetailsViewController.swift in Sources */,
 				46F250AC277FC4DA0099CDB6 /* PhotosRepository.swift in Sources */,
 				46F250BD277FED380099CDB6 /* PhotosCollectionViewDataSource.swift in Sources */,
+				4657E40327818D26001BC663 /* PhotoDetailsPresenter.swift in Sources */,
 				46F250A7277FC2E00099CDB6 /* APILinksFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
