@@ -25,7 +25,7 @@ class PhotosListViewController: UIViewController {
         collectionView.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: PhotoCollectionCell.identifier)
         collectionView.register(AdPlaceHolderCollectionCell.self, forCellWithReuseIdentifier: AdPlaceHolderCollectionCell.identifier)
         collectionView.tag = 1
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .systemBackground
         return collectionView
     }()
     
