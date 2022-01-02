@@ -24,11 +24,7 @@ final class UserDefaultPhotosRepository {
         var result = history.filter { savedPhoto -> Bool in
             photo.id != savedPhoto.id
         }
-        
         result.append(photo)
-        
-        
-        
         let data = try? JSONEncoder().encode(result)
         UserDefaults.standard.set(data, forKey: UserDefaultsKey.historyOfPhotos.rawValue)
         return result

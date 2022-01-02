@@ -7,18 +7,26 @@
 
 import Foundation
 
-import Foundation
+// MARK: - DataTask
+protocol URLSessionDataTaskProtocol {
+    func resume()
+}
+
+extension URLSessionDataTask: URLSessionDataTaskProtocol {}
 
 protocol URLSessionProtocol {
-    func loadData(with url: URL, completionHandler: @escaping (Data?, Error?) -> Void)
+    @discardableResult func loadData(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol
 }
 
 extension URLSession: URLSessionProtocol {
-    func loadData(with url: URL, completionHandler: @escaping (Data?, Error?) -> Void) {
-        let task = dataTask(with: url) { (data, _, error) in
-            completionHandler(data, error)
+    @discardableResult func loadData(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
+        let task = dataTask(with: url) { (data, response, error) in
+            completionHandler(data, response, error)
         }
         task.resume()
+        
+        
+        return task
     }
 }
 class APIClient {
@@ -29,7 +37,7 @@ class APIClient {
     }
     
     func loadData<T: Decodable>(from url: URL, completion: @escaping (Result<T, PicsumError>) -> Void) {
-        session.loadData(with: url) { data, _ in
+        session.loadData(with: url) { data, _, _ in
             do {
                 guard let data = data else {
                     completion(.failure(.noResults))

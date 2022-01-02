@@ -34,6 +34,15 @@ struct PicsumPhoto : Codable {
         url = try values.decodeIfPresent(String.self, forKey: .url)
         download_url = try values.decodeIfPresent(String.self, forKey: .download_url)
     }
+    
+    init(id : String?, author : String?, width : Int?, height : Int?, url : String?, download_url : String?) {
+        self.id = id
+        self.author = author
+        self.width = width
+        self.height = height
+        self.url = url
+        self.download_url = download_url
+    }
 
 }
 
