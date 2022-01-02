@@ -75,7 +75,7 @@ extension PhotosListPresenter: PhotosListPresenterInput {
         state = .history
         let userDefaultSearchHistoryRepository = UserDefaultPhotosRepository()
         let localPhotos = userDefaultSearchHistoryRepository.getHistory()
-        output?.updateData(itemsForCollection: createItemsForCollection(photosArray: localPhotos))
+        output?.updateData(itemsForCollection: createItemsForHistoryCollection(photosArray: localPhotos))
     }
 
     @objc
@@ -92,16 +92,14 @@ extension PhotosListPresenter {
     
     private func getData() {
         self.state = .list
-        
         guard Reachability.shared.isConnected else {
-            self.output?.updateData(error: PicsumError.noInternetConnection)
+            //self.output?.updateData(error: PicsumError.noInternetConnection)
+            getHistory()
             return
         }
         output?.showLoading()
         canLoadMore = false
-        
         photosRepository.photos(with: 5, page: page) { [weak self] result in
-            
             guard let self =  self else {
                 return
             }
@@ -110,7 +108,6 @@ extension PhotosListPresenter {
             
             switch result {
             case .success(let photos):
-                
                 guard !photos.isEmpty  else {
                     self.handleNoPhotos()
                     return
@@ -139,13 +136,32 @@ extension PhotosListPresenter {
     }
 
     private func createItemsForCollection(photosArray: [PicsumPhoto]) -> [ItemCollectionViewCellType] {
-        var photosList =  photosArray.map { photo -> ItemCollectionViewCellType  in
-                .photo(photo: photo)
+        var photosList: [ItemCollectionViewCellType] = []
+        photosList = photosArray.map { photo -> ItemCollectionViewCellType  in
+            savePicsumPhoto(photo)
+            return .photo(photo: photo)
         }
-        
         photosList.append(.adPlaceHolder)
         
         return photosList
+    }
+    
+    private func createItemsForHistoryCollection(photosArray: [PicsumPhoto]) -> [ItemCollectionViewCellType] {
+        var photosList: [ItemCollectionViewCellType] = []
+        for (index, photo) in photosArray.enumerated() {
+            photosList.append(.photo(photo: photo))
+            if index > 1 && index % 5 == 0 {
+                photosList.append(.adPlaceHolder)
+            }
+        }
+        return photosList
+    }
+    
+    private func savePicsumPhoto(_ photo: PicsumPhoto) {
+        let userDefaultHistoryRepository = UserDefaultPhotosRepository()
+        if userDefaultHistoryRepository.getHistory().count < 20 {
+            userDefaultHistoryRepository.savehistory(photo: photo)
+        }
     }
 
 }

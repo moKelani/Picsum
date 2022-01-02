@@ -7,25 +7,31 @@
 
 import Foundation
 
-final class UserDefaultPhotosRepository: PhotosRepository {
-    
-    func photos(with limit: Int, page: Int, completion: @escaping (Result<[PicsumPhoto], PicsumError>) -> Void) {
-        
-    }
-    
+final class UserDefaultPhotosRepository {
+
     func getHistory() -> [PicsumPhoto] {
-        if let history = UserDefaults.standard.array(forKey: UserDefaultsKey.historyOfPhotos.rawValue) as? [PicsumPhoto] {
-            return history
+        if let data = UserDefaults.standard.data(forKey:  UserDefaultsKey.historyOfPhotos.rawValue) {
+                let history = try? JSONDecoder().decode([PicsumPhoto].self, from: data)
+                return history ?? []
         }
         return []
-        
     }
     
     @discardableResult
-    func savehistory() -> [PicsumPhoto] {
+    func savehistory(photo: PicsumPhoto) -> [PicsumPhoto] {
         let history = getHistory()
-        UserDefaults.standard.set(history, forKey: UserDefaultsKey.historyOfPhotos.rawValue)
-        return history
+        
+        var result = history.filter { savedPhoto -> Bool in
+            photo.id != savedPhoto.id
+        }
+        
+        result.append(photo)
+        
+        
+        
+        let data = try? JSONEncoder().encode(result)
+        UserDefaults.standard.set(data, forKey: UserDefaultsKey.historyOfPhotos.rawValue)
+        return result
     }
     
     func clearHistory() -> [PicsumPhoto] {

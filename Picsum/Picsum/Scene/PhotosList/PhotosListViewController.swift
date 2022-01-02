@@ -37,7 +37,6 @@ class PhotosListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         configureNavigationBar()
-       // getHistory()
         getPhotoList()
     }
     
@@ -79,9 +78,9 @@ extension PhotosListViewController {
         presenter?.getPhotoList()
     }
 
-    func getHistory() {
-        presenter?.getHistory()
-    }
+//    func getHistory() {
+//        presenter?.getHistory()
+//    }
     
     func clearCollection() {
         DispatchQueue.main.async {
@@ -122,14 +121,10 @@ extension PhotosListViewController: PhotosListPresenterOutput {
         }
 
         DispatchQueue.main.async {
-//            if case let .list = self.presenter?.state {
-//                self.searchController.searchBar.text = term
-//            }
             self.photosCollectionView.restore()
             self.photosCollectionView.dataSource = self.collectionDataSource
             self.photosCollectionView.delegate = self.collectionDataSource
             self.photosCollectionView.reloadData()
-
         }
         
     }
